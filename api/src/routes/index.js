@@ -30,7 +30,7 @@ const getDbInfo = async () => {
   });
 };
 
-const getAllRecipes = async () => {
+const getAllRecipes = async () => {                         //Obtener TODAS las recetetas
   const apiInfo = await getApiInfo();
   const dbInfo = await getDbInfo();
   const totalInfo = dbInfo.concat(apiInfo);

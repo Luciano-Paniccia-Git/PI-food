@@ -1,0 +1,50 @@
+.landingContainer{
+    background-color: rgb(31, 29, 29);
+    background-image: url('../multimedia/2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 65% 95%;
+    height: 100vh; 
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingButton{
+    width: 20vh;
+    height: 20vh;
+    background-color: #4c474975;
+    color: rgb(224, 223, 223);
+    border: none;
+    border-radius: 50%;
+    font-weight:bold;
+    font-size: larger;
+    cursor: pointer;
+} 
+
+.landingButton:hover {
+    background-color: var(--primary-color);
+}
+
+@media (max-width: 600px){
+    .landingButton{
+        width: 16vh;
+        height: 16vh;
+    }
+}
+.links {
+    height: 18px;
+    width: 15px;
+    display: flex;
+    margin-bottom: -600px;
+    position: relative;
+    right: 1040px;
+  }
+  
+  .mini_box img{
+      height: 80px;
+      width: 80px;
+      padding: 10px;
+  }
+  
