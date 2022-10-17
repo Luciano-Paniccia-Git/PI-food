@@ -6,7 +6,7 @@ import github from "../multimedia/github (1).png";
 export default function Landing() {
     return (
         <div className={styled.landingContainer}>
-            <Link to='/home/recipes'>
+            <Link to='/home'>
                 <button className={styled.landingButton}>Let's Cook</button>
             </Link>
             
