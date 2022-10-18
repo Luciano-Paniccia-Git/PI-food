@@ -25,13 +25,10 @@ export const RecipeDetail = (props) => {
           <h2 className="h3D">{recipeDetail.name}</h2>
         </div>
         <div>
+          <img src={recipeDetail.image} alt="img" className="image" width="370px" height="280px"/>
         </div>
-        <div>
-          <h4 className="h4D">
-          Ideal for {recipeDetail.dishTypes?.join(", ")}
-          </h4>
-        </div>
-            <div className="detailtypes">
+        <h3>TYPES OF DIETS</h3>
+        <div className="detailtypes">
           {recipeDetail.diets?.map((e) => {
             return (
               <h4 className="diet" key={e}>
@@ -41,15 +38,16 @@ export const RecipeDetail = (props) => {
           })}
         </div>
         <div>
+          <h5>SUMMARY</h5>
           <p className="pe"
             dangerouslySetInnerHTML={{__html: recipeDetail.summary}}//cambiar, con regEx
           />
         </div>
         <div>
-          <h4 className="h4D">Health score: {recipeDetail.healthScore}</h4>
+          <h4 className="h4D">HEALTH SCORE: {recipeDetail.healthScore}</h4>
         </div>
         <div>
-          <h4 className="h4D">Step by Step:</h4>
+          <h4 className="h4D">STEP BY STEP:</h4>
           {recipeDetail.steps &&
             recipeDetail.steps.map((e) => {
               return (

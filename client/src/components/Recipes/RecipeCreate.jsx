@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory,Link } from 'react-router-dom';
+import React, { useState} from "react";
+import { useDispatch, useSelector} from 'react-redux';
+import {Link, useHistory} from 'react-router-dom';
 import { createRecipe, getDietTypes } from '../../redux/actions/actions';
 import './RecipeCreate.css'
 
@@ -34,6 +34,9 @@ function validate(newrecipe) {
     if (newrecipe.diets.length === 0) {
       errors.diets = "At least one diet required";
     }
+    if(newrecipe.image.length !== 0 && !/^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/.test(newrecipe.image)){
+      errors.image='invalid URL'
+    }
     return errors;
   }
   
@@ -48,6 +51,7 @@ function validate(newrecipe) {
     const [newrecipe, setRecipe] = useState({
       name: "",
       summary: "",
+      image: "",
       healthScore: 0,
       step: "",
       number: 1,
@@ -154,6 +158,17 @@ function validate(newrecipe) {
                 />
               </label>
               <label>
+                Image:{" "}
+                <input 
+                className="inputcreate"
+                type="text"
+                placeholder="Example http://..."
+                value={newrecipe.image}
+                name="image"
+                onChange={(e) => handleChange(e)}
+                />
+              </label>
+              <label>
                 Summary:{" "}
                 <textarea
                   name="summary"
@@ -212,6 +227,9 @@ function validate(newrecipe) {
           <div className="preview">
             <div>
               {error.name? <label className="errordisp">--{error.name}--</label> : <h3>{newrecipe.name}</h3>}
+            </div>
+            <div>
+              {error.image? <label className="errordisp">--{error.image}--</label> : <p>{newrecipe.image}</p>}
             </div>
             <div>
               {error.summary? <label className="errordisp">--{error.summary}--</label> : <p>{newrecipe.summary}</p>}

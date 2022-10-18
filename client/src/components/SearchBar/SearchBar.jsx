@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { resetRecipes, searchRecipe } from '../../redux/actions/actions'
+import { getAllRecipes, searchRecipe } from '../../redux/actions/actions'
 import './SearchBar.css'
 
 export const SearchBar = ({reset}) => {
@@ -17,7 +17,7 @@ export const SearchBar = ({reset}) => {
         e.preventDefault()
         setName('')
         reset()
-        dispatch(resetRecipes())
+        dispatch(getAllRecipes())
     }
 
   return (
@@ -29,7 +29,7 @@ export const SearchBar = ({reset}) => {
           <button onClick={handleClick} className='btn'>Buscar</button>
         </div>
         <div>
-          <button onClick={handleReset} className='btn'>Ver Todos</button>
+          <button onClick={handleReset} className='btn'>Actualizar</button>
         </div>
     </div>
   )

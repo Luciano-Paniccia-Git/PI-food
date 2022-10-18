@@ -9,7 +9,7 @@ function Recipe(props) {
             <h3 className='name'>{name}</h3>
         </div>
         <div className='divimg'>
-            <img src={image} alt='img' className='image'/>
+            <img src={image} alt='img' className='image' width="312px" height="231px"/>
         </div>
         <div className='dietTypeContainer'>
             {

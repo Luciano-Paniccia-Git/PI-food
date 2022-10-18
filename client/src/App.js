@@ -5,8 +5,7 @@ import { Route } from "react-router-dom";
 import Landing from './components/Landing/Landing';
 import Home from './components/Home/Home';
 import { RecipeDetail } from './components/Recipes/RecipeDetail';
-import { RecipeCreate } from './components/Recipes/RecipeCreate';
-
+import { RecipeCreate } from './components/Recipes/RecipeCreate'
 
 function App() {
   return (
