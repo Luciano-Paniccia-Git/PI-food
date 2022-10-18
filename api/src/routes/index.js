@@ -7,7 +7,6 @@ const {API_KEY}=process.env
 const router = Router();
 const {Recipe,Diet} = require('../db');
 const { getALLRecipes,getDBrecipesID,getAPIrecipesID } = require('../services/recipe');
-
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
@@ -116,13 +115,13 @@ router.get('/diets', async (req,res) => {
 
 router.post('/recipes', async  (req,res) => {
     try {
-        const {name,summary,healthScore,steps,diets} = req.body
+        const {name,summary,healthScore,steps,diets,image} = req.body
         const newRecipe = await Recipe.create({
             name,
             summary,
             healthScore,
             steps,
-            image: "https://spoonacular.com/recipeImages/716426-312x231.jpg"
+            image
         })
         let dietTypes = await Diet.findAll({
             where: { name: diets} //diets=['vegetarian', 'lacto ovo vegetarian']
