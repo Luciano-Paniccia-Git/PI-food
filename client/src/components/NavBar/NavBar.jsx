@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { SearchBar } from "../SearchBar/SearchBar";
-import { filterRecipesByType, orderRecipes } from "../../redux/actions/actions";
+import { filterRecipesByType, orderRecipes} from "../../redux/actions/actions";
 import "./NavBar.css";
 
 function NavBar({paging}) {
@@ -45,18 +45,19 @@ function NavBar({paging}) {
 
       <div className="custom-dropdown order">
         <select name="select" onChange={handleOrder}>
-          <option disabled selected defaultValue>Ordenado por...</option>
+          <option disabled  defaultValue>Ordenado por...</option>
           <option value="AZ">A-Z</option>
           <option value="ZA">Z-A</option>
           <option value="<HS">Mayor puntaje de salud</option>
           <option value=">HS">Menor puntaje de salud</option>
         </select>
+        
       </div>
 
       <div className="typeContainer">
         <div className="custom-dropdown types">
           <select onChange={handleOnChange}>
-            <option disabled selected defaultValue>Seleccione el tipo para agregar</option>
+            <option disabled  defaultValue>Seleccione el tipo para agregar</option>
             {dietTypes.map((e) => {
               return (
                 <option value={e.name} key={e.id}>

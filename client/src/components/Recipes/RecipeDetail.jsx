@@ -27,6 +27,11 @@ export const RecipeDetail = (props) => {
         <div>
           <img src={recipeDetail.image} alt="img" className="image" width="370px" height="280px"/>
         </div>
+        <div>
+          <h4 className="h4D">
+            Ideal for {recipeDetail.dishTypes?.join(", ")}
+          </h4>
+        </div>
         <h3>TYPES OF DIETS</h3>
         <div className="detailtypes">
           {recipeDetail.diets?.map((e) => {

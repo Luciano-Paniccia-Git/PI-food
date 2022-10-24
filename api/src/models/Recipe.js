@@ -21,10 +21,7 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
     },
     steps: {
-      type: DataTypes.ARRAY(DataTypes.JSON)
-    },
-    score: {
-      type:   DataTypes.FLOAT
+      type: DataTypes.ARRAY(DataTypes.JSON) 
     },
     image: {
       type: DataTypes.STRING

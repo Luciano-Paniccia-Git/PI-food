@@ -139,7 +139,6 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 recipes: state.recipes.sort(functionpiolarda)//recipes=[1,2,3]
             }
-
         case RESET_DETAIL:
             return {
                 ...state,
@@ -148,4 +147,5 @@ export default function reducer(state = initialState, action) {
         default:
             return {...state}
     }
+    
 }

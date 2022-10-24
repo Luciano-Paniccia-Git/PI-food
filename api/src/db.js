@@ -31,11 +31,11 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Recipe, Diet } = sequelize.models;
+const { Recipe, Diet } = sequelize.models; //extraer datos y asignarlos como variables
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-Recipe.belongsToMany(Diet,{through: "recipe_diet"});
+Recipe.belongsToMany(Diet,{through: "recipe_diet"}); //se utiliza para crear una asociación de muchos a muchos entre dos tablas
 Diet.belongsToMany(Recipe,{through: "recipe_diet"});
 
 module.exports = {
