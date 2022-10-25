@@ -40,7 +40,7 @@ export default function reducer(state = initialState, action) {
 
         case SEARCH_RECIPE:
             if (action.payload.message) {
-                alert("No recipes found")
+                alert("No se encontraron recetas")
                 return {
                     ...state,
                 }
@@ -73,7 +73,7 @@ export default function reducer(state = initialState, action) {
                 if (!aux.includes(false)) news.push(r)
             })
             if(!news.length) {
-                alert('no recipes found')
+                alert('No se encontraron recetas')
                 return {
                     ...state,
                 }

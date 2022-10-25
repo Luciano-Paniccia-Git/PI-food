@@ -23,7 +23,13 @@ export const SearchBar = ({reset}) => {
   return (
     <div className='searchcontainer'>
         <div>
-          <input className='input' type='text' name='name' placeholder='Buscar receta...' value={name} onChange={e => setName(e.target.value)}/>
+          <input className='input' 
+            type='text'
+            name='name' 
+            placeholder='Buscar receta...' 
+            value={name} 
+            onChange={e => setName(e.target.value)}
+          />
         </div>
         <div>
           <button onClick={handleClick} className='btn'>Buscar</button>

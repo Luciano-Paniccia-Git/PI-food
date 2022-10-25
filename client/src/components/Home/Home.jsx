@@ -11,13 +11,13 @@ export default function Home() {
   const dispatch = useDispatch();
 
   let { recipes } = useSelector((state) => state);
-  const [currentpage, setCurrentPage] = useState(1);
-  const recipesPerPage = 9;
+  const [currentpage, setCurrentPage] = useState(1); //lo seteo en un 1 porque siempre arranco por la primer pagina
+  const recipesPerPage = 9; // cantidad de recetas por pagina
 
-  const indexOfLastRecipe = currentpage * recipesPerPage;
-  const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
+  const indexOfLastRecipe = currentpage * recipesPerPage; 
+  const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage; 
 
-  let currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
+  let currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe); //para dividir la cantidad de recetas por pagina
 
   const paging = (pagenumber) => {
     setCurrentPage(pagenumber);
