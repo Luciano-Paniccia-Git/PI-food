@@ -45,7 +45,7 @@ function NavBar({paging}) {
 
       <div className="custom-dropdown order">
         <select name="select" onChange={handleOrder}>
-          <option disabled  defaultValue>Ordenado por...</option>
+          <option disabled selected defaultValue>Ordenado por...</option>
           <option value="AZ">A-Z</option>
           <option value="ZA">Z-A</option>
           <option value="<HS">Mayor puntaje de salud</option>
@@ -54,10 +54,11 @@ function NavBar({paging}) {
         
       </div>
 
+ 
       <div className="typeContainer">
         <div className="custom-dropdown types">
           <select onChange={handleOnChange}>
-            <option disabled  defaultValue>Seleccione el tipo para agregar</option>
+            <option disabled selected defaultValue>Seleccione el tipo para agregar</option>
             {dietTypes.map((e) => {
               return (
                 <option value={e.name} key={e.id}>

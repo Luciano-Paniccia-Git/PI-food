@@ -40,3 +40,4 @@ export const SearchBar = ({reset}) => {
     </div>
   )
 }
+//PROBANDO CAMBIOS

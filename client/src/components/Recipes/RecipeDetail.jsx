@@ -45,7 +45,7 @@ export const RecipeDetail = (props) => {
         <div>
           <h5>SUMMARY</h5>
           <p className="pe"
-            dangerouslySetInnerHTML={{__html: recipeDetail.summary}}//cambiar, con regEx
+            dangerouslySetInnerHTML={{__html: recipeDetail.summary}}
           />
         </div>
         <div>

@@ -3,13 +3,25 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST,
+  DB_DEPLOY
 } = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/food`, {
+// const sequelize = new Sequelize(DB_DEPLOY, {
+//   logging: false, // set to console.log to see the raw SQL queries
+//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+//   //CONFIG ADICIONAL
+//   dialectOptions: {
+//       ssl: {
+//         require: true,
+//         rejectUnauthorized: false
+//       }
+//   },
+// })
+
+const sequelize = new Sequelize(DB_DEPLOY, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-});
+})
 
 const basename = path.basename(__filename);
 
@@ -31,11 +43,11 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Recipe, Diet } = sequelize.models; //extraer datos y asignarlos como variables
+const { Recipe, Diet } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-Recipe.belongsToMany(Diet,{through: "recipe_diet"}); //se utiliza para crear una asociación de muchos a muchos entre dos tablas
+Recipe.belongsToMany(Diet,{through: "recipe_diet"});
 Diet.belongsToMany(Recipe,{through: "recipe_diet"});
 
 module.exports = {
